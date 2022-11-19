@@ -12,9 +12,18 @@
   ],
   "scripts": {
     "start": "concurrently \"yarn workspace backend start\" \"yarn workspace frontend dev\"",
-    "prisma:generate": "yarn workspace backend prisma generate"
+    "prisma:generate": "yarn workspace backend prisma generate",
+    "lint": "concurrently \"yarn workspace backend lint\" \"yarn workspace frontend lint\""
   },
   "dependencies": {
     "concurrently": "^7.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "husky": "^8.0.2",
+    "prettier": "^2.7.1"
   }
 }
