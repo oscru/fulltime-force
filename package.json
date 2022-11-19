@@ -1,0 +1,20 @@
+{
+  "name": "fulltime-force",
+  "version": "1.0.0",
+  "description": "Technical test fulltime-force",
+  "main": "index.js",
+  "author": "Oscru",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "start": "concurrently \"yarn workspace backend start\" \"yarn workspace frontend dev\"",
+    "prisma:generate": "yarn workspace backend prisma generate"
+  },
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
+}
