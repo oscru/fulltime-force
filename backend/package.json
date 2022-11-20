@@ -24,9 +24,9 @@
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@octokit/core": "^4.1.0",
     "cross-env": "5.0.5",
     "frontend": "1.0.0",
-    "nestjs-octokit": "^0.2.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2"
   },

@@ -1,9 +1,27 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
 
 function App() {
+  const getInitialFetch = () => {
+    const abortController = new AbortController();
+    fetch(`${import.meta.env.VITE_API_URL}/github-api/`, {
+      signal: abortController.signal,
+    })
+      .then(res => {
+        if (!res.ok) throw Error("Could't fetch the data for the server.");
+        return res.json();
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => alert(error.name));
+  };
+
+  useEffect(() => {
+    getInitialFetch();
+  }, []);
+
   const [count, setCount] = useState(0);
 
   return (
