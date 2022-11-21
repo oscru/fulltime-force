@@ -1,0 +1,24 @@
+.container {
+  @apply w-8/12 bg-dark-gray border border-light m-auto rounded-md drop-shadow-lg mt-20;
+  tr th {
+    @apply border-b border-light py-3 px-5 text-left;
+  }
+  .listItem {
+    @apply border-b border-light hover:bg-dark;
+    td {
+      @apply px-5 py-3;
+    }
+    td:last-child {
+      @apply flex justify-end;
+    }
+  }
+}
+.buttonsContainer {
+  button,
+  a {
+    @apply bg-primary rounded-md px-3 py-1 mx-2 font-medium;
+  }
+  .showMessage {
+    @apply rounded-full w-7 h-7 p-0;
+  }
+}

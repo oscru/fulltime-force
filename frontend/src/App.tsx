@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Hero, CommitsList } from './components';
+import { Hero, CommitsList, NavBar, Footer } from './components';
 import '@/assets/styles/App.css';
 import commit from '@common/types/commit';
 
@@ -16,6 +16,7 @@ function App() {
         return res.json();
       })
       .then(data => {
+        console.log(data);
         setInitialCommits(data);
       })
       .catch(error => alert(error.name));
@@ -27,8 +28,10 @@ function App() {
 
   return (
     <div>
+      <NavBar />
       <Hero />
       <CommitsList commits={initialCommits} />
+      <Footer />
     </div>
   );
 }

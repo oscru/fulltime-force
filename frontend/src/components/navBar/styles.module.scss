@@ -1,0 +1,18 @@
+.container {
+  @apply flex justify-between items-center w-8/12 m-auto sticky top-10 h-[50px];
+  .logo {
+    @apply flex items-center;
+    .octopusIcon {
+      @apply w-[48px] bg-primary rounded-full mr-3;
+      img {
+        @apply w-[50px];
+      }
+    }
+    h2 {
+      @apply text-3xl font-medium;
+    }
+  }
+  .social a {
+    @apply mx-3;
+  }
+}
