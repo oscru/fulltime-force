@@ -7,6 +7,7 @@ function App() {
   const [initialCommits, setInitialCommits] = useState<commit[]>([]);
   const [repositories, setRepositories] = useState<any[]>([]);
   const [inputValue, setInputValue] = useState<string>('');
+  const [selectedCommit, setSelectedCommit] = useState<commit | undefined>();
   const [loadingRepositories, setLoadingRepositories] =
     useState<boolean>(false);
 
@@ -50,6 +51,14 @@ function App() {
       .catch(error => console.log(error));
   };
 
+  const handleShowCommitMessage = () => {
+    console.log(selectedCommit);
+  };
+
+  useEffect(() => {
+    handleShowCommitMessage();
+  }, [selectedCommit]);
+
   useEffect(() => {
     getInitialFetch();
   }, []);
@@ -71,7 +80,10 @@ function App() {
         repositories={repositories}
         loadingRepositories={loadingRepositories}
       />
-      <CommitsList commits={initialCommits} />
+      <CommitsList
+        commits={initialCommits}
+        setSelectedCommit={setSelectedCommit}
+      />
       <Footer />
     </div>
   );

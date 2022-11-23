@@ -3,7 +3,7 @@ import { DateTime } from 'luxon';
 import commitsListProps from './props';
 import styles from './styles.module.scss';
 
-const CommitsList = ({ commits }: commitsListProps) => {
+const CommitsList = ({ commits, setSelectedCommit }: commitsListProps) => {
   return (
     <table className={styles.container}>
       <thead>
@@ -30,7 +30,12 @@ const CommitsList = ({ commits }: commitsListProps) => {
               <a href={commit.html_url} target="_blank" rel="noreferrer">
                 View Online
               </a>
-              <button className={styles.showMessage}>▼</button>
+              <button
+                className={styles.showMessage}
+                onClick={() => setSelectedCommit(commit)}
+              >
+                ▼
+              </button>
             </td>
           </tr>
         ))}
