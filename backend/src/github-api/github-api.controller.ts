@@ -1,4 +1,4 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Param } from '@nestjs/common';
 import { Get } from '@nestjs/common';
 import { Octokit } from '@octokit/core';
 
@@ -13,6 +13,16 @@ export class GithubApiController {
       {
         owner: 'oscru',
         repo: 'fulltime-force',
+      },
+    );
+    return response.data;
+  }
+  @Get('/get-repository/:repository')
+  async getGithubRepository(@Param('repository') repository: string) {
+    const response = await octokit.request(
+      'GET /orgs/{org}/repos{?type,sort,direction,per_page,page}',
+      {
+        org: repository,
       },
     );
     return response.data;

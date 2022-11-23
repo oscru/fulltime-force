@@ -15,10 +15,10 @@ const NavBar = () => {
         </h2>
       </a>
       <div className={styles.social}>
-        <a href="https://github.com/oscru">
+        <a href="https://github.com/oscru" target="_blank" rel="noreferrer">
           <Icon name="Github" />
         </a>
-        <a href="https://oscru.netlify.app">
+        <a href="https://oscru.netlify.app" target="_blank" rel="noreferrer">
           <Icon name="Love" />
         </a>
       </div>

@@ -1,0 +1,14 @@
+.container {
+  @apply w-1/2 absolute z-10 border-light bg-dark-gray m-auto top-20 max-h-96 overflow-auto rounded-b-md drop-shadow-md hidden;
+  .item {
+    @apply px-5 py-2 border border-b-light;
+  }
+}
+.loaderContainer {
+  @extend .container;
+  @apply min-h-[100px] flex justify-center items-center;
+}
+
+.show {
+  @apply block;
+}
